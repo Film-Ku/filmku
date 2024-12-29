@@ -102,7 +102,7 @@ function selectInput(list) {
 
 let availableKeywords = [
     '<a href="https://id.wikipedia.org/wiki/HTML">HyperText Markup Language (HTML)</a>',
-    '<a href="Panggonan Wingit (2023).html">Panggonan Wingit 2023</a>',
+    '<a href="Post/Panggonan Wingit (2023).html">Panggonan Wingit 2023</a>',
     'Easy Tutorial',
     'Web Design Tutorial',
     'JavaScript',
