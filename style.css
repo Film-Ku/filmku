@@ -20,7 +20,7 @@ body {
     justify-content: space-between;
     position: fixed;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Pastikan di atas elemen lain */
+    z-index: 1000; /* Ensure it is above other elements */
   }
 
   .menu-button img,
@@ -41,6 +41,7 @@ body {
       opacity: 0; /* Memulai dengan transparan */
       transition: opacity 1s ease, transform 1s ease; /* Animasi transisi */
       transform: translateY(-20px); /* Mulai dengan posisi sedikit di atas */
+      z-index: 1001; /* Ensure it is above other elements */
   }
 
   .searchform input {
@@ -88,7 +89,7 @@ body {
     top: 100%; /* Position it below the search form */
     left: 0;
     width: 100%;
-    z-index: 1001; /* Ensure it appears above other elements */
+    z-index: 1001; /* Ensure it is above other elements */
 }
 .result-box a {
   display: block;
@@ -116,7 +117,7 @@ body {
     transition: left 0.3s ease;
     padding: 20px;
     box-sizing: border-box;
-    z-index: 1000; /* Agar di atas elemen lain */
+    z-index: 1000; /* Ensure it is above other elements */
   }
 
   .sidebar.open {
@@ -182,11 +183,20 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 999; /* Di bawah sidebar */
+    z-index: 999; /* Ensure it is below the sidebar */
   }
 
   .overlay.show {
     display: block;
+  }
+
+  /*social-media-icons*/
+  .social-media-icons {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    gap: 10px;
+    margin-top: 100%;
   }
 
   /* Main content */
@@ -233,7 +243,7 @@ body {
 
       section h2 {
           margin-bottom: 10px;
-          text-align: center;
+          text-align: left;
       }
       section h2 span {
         color: orange;    
@@ -288,6 +298,94 @@ body {
       .carousel-btn.right {
           right: 10px;
       }
+  /* membuat video container */
+      
+    .video-container {
+      position: relative;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      margin: 20px 0;
+  }
+  .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+  } 
+
+/*memberi jarak pada bagian atas agar tidak tertutup header */
+.jarakatas {
+  padding-top: 40px; 
+  }
+.judulfilm {
+  font-size:20px;
+  padding: 0 20px 0 20px;
+}   
+
+/*informasi dari film */
+p1 {
+  text-indent: 0;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+  color: #fff;
+  padding: 0 20px 0 20px;
+}
+
+.poster img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+}
+
+.detail {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  gap: 10px;
+  line-height: 2;
+}
+
+.value {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  gap: 10px;
+  line-height:2;
+  text-align: left;
+  color: orange;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.buttons button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: orange;
+}
+
+.description {
+  grid-column: span 2;
+  margin-top: 10px;
+  line-height: 1.5;
+  text-align: justify;
+}
 
   /* Membuat Film Card */    
       .film-grid {
@@ -318,4 +416,5 @@ footer {
     padding: 10px;
     bottom: 0;
     width: 100%;
+    box-shadow: -10px -5px 10px rgba(0, 0, 0, 0.2);
 }
