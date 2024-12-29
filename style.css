@@ -310,3 +310,12 @@ a{
 color: white;
 text-decoration: none;
 }
+
+footer {
+    background-color: #262628;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}
