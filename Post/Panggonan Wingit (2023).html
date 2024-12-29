@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panggonan Wingit (2023)</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #262628;
+      color: white;
+      overflow-x: hidden;
+    }
+
+     .header {
+      background-color: #262628;
+      height: 40px;
+      width: 97%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 80px;
+      padding-left: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000; /* Pastikan di atas elemen lain */
+    }
+
+    .menu-button img,
+    .search-button img {
+            height: 40px;
+            width: auto;
+            cursor: pointer;
+        }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      background-color: #1D1D1D;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: -300px; /* Tersembunyi di luar layar */
+      transition: left 0.3s ease;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 1000; /* Agar di atas elemen lain */
+    }
+
+    .sidebar.open {
+      left: 0; /* Muncul di layar */
+    }
+
+    .sidebar h1 {
+      margin: 0 0 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar h1 img {
+      width: 120px;
+      margin: 0;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .sidebar ul li a img {
+      width: 40px;
+      margin-right: 15px;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #1D1D1D;
+    }
+
+    .submenu {
+      list-style-type: none;
+      padding-left: 80px;
+      display: none;
+    }
+
+    .submenu li {
+      margin: 10px 0;
+    }
+
+    /* Overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999; /* Di bawah sidebar */
+    }
+
+    .overlay.show {
+      display: block;
+    }
+  /* Main content */
+    .content {
+      margin-left: 20px;
+      padding: 20px;
+    }
+
+    p {
+      text-indent: 50px;
+    }
+    
+    p1 {
+      text-indent: 0;
+    }
+     
+    
+    .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .logo h1 span {
+            color: #FFBD59;
+        }
+
+
+    section {
+      padding: 0 20px 20px 20px;
+    }
+
+    section h2 {
+      margin-bottom: 10px;
+      border-bottom: 2px solid #FFBD59;
+      display: inline-block;
+    }
+
+    .film-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .film-card img {
+      width: 100%;
+      height: auto;
+      max-width: 240px;
+      border-radius: 10px;
+    }
+
+    .film-card img:hover {
+      transform: scale(1.05);
+    }
+    .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 10px;
+            max-width: 800px;
+            margin: 20px auto;
+            color: #fff;
+            padding: 0 20px 0 20px;
+        }
+
+        .poster img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .info {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 20px;
+        }
+
+        .detail {
+            display: grid;
+            grid-template-rows: repeat(4, auto);
+            gap: 10px;
+            line-height: 2;
+        }
+
+        .value {
+            display: grid;
+            grid-template-rows: repeat(4, auto);
+            gap: 10px;
+            line-height:2;
+            text-align: left;
+            color: #FFBD59;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .buttons button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            background-color: #FFBD59;
+        }
+
+        .description {
+            grid-column: span 2;
+            margin-top: 10px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+    .video-container {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin: 20px 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        } 
+    .jarakatas { /*memberi jarak pada bagian atas agar tidak tertutup header */
+        padding-top: 40px; 
+        }
+    .judulfilm {
+        font-size:20px;
+        padding: 0 20px 0 20px;
+    }    
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="menu-button" id="menuButton">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHgKk0Z7SsjOc087QyS4Ckj6SyQT6bx_J_HMfOBRyGLNR-m_cISQobg-jEBVSKW84aJ80p3HM_5hh8ff9OKb8DZV4ajb_au8PMYZ3A_IHmh7O_IfMzo9ZECYgepZuLdKHDuMqtuVwclQhEyO-Zu-luNkwm1HCLVwJ-jkLjmDrzzZLi4CdohsLxAU6zAv1Y/s116/FilmKu_20241226_070940_0000.png">
+    </div>
+        <div class="logo-container">
+            <div class="logo">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPhVJl6J_JdQ-7zc1-qMFQAnkZNDkpbQvJIgOmOKTstghn8hSD9LRf0va9dYz5cNZdzjK0Lgw4YyBAkeOA26pwJ3ZsC5rg_ySfpOYOKQKJeR1aW_jQBUJhYC3ATrAhbCPsuS-B7URzbS3ymn0KblXdgjmVSdX2IKkBjCmP2drEKcKI1MxJIpqJhyCw2FPU/s1920/FILM (Wallpaper Telepon)_20241224_134622_0000.png" alt="Logo FilmKu">
+                <h1>Film<span>Ku</span></h1>
+            </div>
+        </div>
+        <div class="search-button">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1N1-lq1zlxsqUPTmM9sa52MXcKvk-FwSGnolKu90RCCsz6e2XrUQqxknJXJlYpv5rM9skXOFmVmJ8uzCM2s3fQtohD1fVn5uhJEZ9qOZ86M9Gwycfs3O3HaQV1fXWaVkGryPtJb4UweXjVNts-_Pi2LhL7jdbWvZzrm2WyFK3dtk5YjZ4V2n3FWbx3K1Y/s116/FilmKu_20241226_070911_0000.png" alt="Search">
+        </div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <h1>
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgiqNvU1KqoaJPkoQD8T4UT63MyRPjCGz03Lx52GAoqB2y7YIbEy-KL5pVIiHxRVFeobamhmlny0Gb8j1zXMTi8EOjAfjgAgWvKTzNj9O1UUZPxCGFPgsKasMYgVa6DcVA0roKAmYAjsGB4YP7duVCUSADIeEI8MruN3-_BbQhpK6Zu-LcKw1Mr3Ngj_oiy/s318/FilmKu_20241226_143851_0000.png" alt="Logo">
+    </h1>
+    <ul>
+      <li>
+        <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOqXju3kzPgmiNI-oAmad-1wB4Fs4bXtwbhxZyHoJ936ALg7feAAG_sCsjO6pEoswAHVGjhFfosv5bgmdPHJOcyX3lmWhN-2iI7Z77oQXInSzFMygqTfeKrp-mWl6WkwRvF7aoLAwzU3mWzZSJLVNfeDRRtgBr5nEPl05qRHyVvxblt5e-W2yEH-e2G3wu/s116/FilmKu_20241226_141508_0000.png" alt="Home Icon"> Home</a>
+      </li>
+      <li>
+        <a class="collapsible"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfxxWWAt5Dr2GgoLzzpa74hwRKNKDjUXucI14mRQWqB5wJsI7V_pklDQpmQnVPv7Yl8RvOIU2sX2cismBdiUClrB_AK5Wlx3LAxd6Cd0Gim6RT-wDTkajuxD9uTZRyKhfJRWBtSkVH9EZX3Gq26ZKlCyms0oyanxjoqXoA3_vVES1ZFsfWfAfwB_RpF078/s116/FilmKu_20241226_141520_0000.png" alt="Series Icon"> Series</a>
+        <ul class="submenu">
+          <li><p><a href="#">Series Barat</a></p></li>
+          <li><p><a href="#">Series Indonesia</a></p></li>
+          <li><p><a href="#">Series Korea</a></p></li>
+        </ul>
+      </li>
+      <li>
+        <a class="collapsible"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-FV2kgjScsZAKSdJFySqs494bVQyhWGtMuVYaqHrDBWkWVZ2ygeMKq6JnehHN5Si3cdcu3i5gawu4k6CHuA4ATATcwER8W7iPBhZzAYyY33f3BEQFV-fD6ZZYezQI0rv36ofpuSxpRsD_J5OZvCwQT_26_l3zDD-LUw75alJhqjM8LsjktqYxick-zcBc/s116/FilmKu_20241226_141531_0000.png" alt="Film Icon"> Film</a>
+        <ul class="submenu">
+          <li><p><a href="#">Film Barat</a></p></li>
+          <li><p><a href="#">Film Indonesia</a></p></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="jarakatas"</div>
+  
+  <!-- Video Player -->
+    <div class="video-container">
+        <iframe 
+            src="https://drive.google.com/file/d/110L7nLZ-t70LxtM0m2Rn_u59trzaSiuO/preview"
+            allow="fullscreen"
+            title="Cek Toko Sebelah Video Player">
+        </iframe>
+    </div>
+    
+  <!-- Judul Film -->
+  <div class="judulfilm">
+      <h2>Panggonan Wingit (2023)</h2>
+  </div>
+
+  <!-- Main Content -->
+    <div class="container">
+        <div class="poster">
+            <img src="https://m.media-amazon.com/images/M/MV5BZTI1NzZiOGUtZTRlZS00ODBlLThlZWItN2ViM2UzMWFlYjUzXkEyXkFqcGdeQXVyNTg2MDI2Njc@._V1_.jpg" alt="Poster Cek Toko Sebelah">
+        </div>
+        <div class="info">
+            <div class="detail">
+                <span><strong>Kualitas</strong></span>
+                <span><strong>Negara</strong></span>
+                <span><strong>IMDb</strong></span>
+                <span><strong>Genre</strong></span>
+            </div>
+            <div class="value">
+                <span>WEBDL</span>
+                <span>Indonesia</span>
+                <span>8/10 ⭐</span>
+                <span>Drama, Komedi, Family</span>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="download">Download</button>
+            <button class="subtitle">Subtitle</button>
+        </div>
+        <div class="description">
+            <p1>Kehidupan Raina terancam setelah dia membuka pintu dan memasuki kamar yang tidak bernomor di hotel yang dikelola oleh saudara perempuannya, Fey. Sosok seorang wanita dengan rambut putih dan kulit juga membuat kehadirannya diketahui. Raina dan saudara perempuannya pindah ke kota Semarang untuk mengelola hotel yang diwarisi dari ayah mereka. Nenek mereka, yang telah mengelola hotel, melarang mereka pergi ke lantai tiga. Tetapi untuk beberapa alasan, Raina pergi ke lantai itu dan menemukan kamar yang tidak bernomor. Dia membuka kamar dan melihat seorang wanita misterius. Sejak itu, insiden aneh mulai terjadi dan kehidupan Raina terancam.</p1>
+        </div>
+    </div>
+  <section>
+    <h2>Rekomendasi</h2>
+    <div class="film-grid">
+      <div class="film-card"><img src="https://m.media-amazon.com/images/M/MV5BNmQ4ZmM2NmItZGMwNi00ODhiLWFjZTMtMDdmYzg3YjdiNWM0XkEyXkFqcGc@._V1_.jpg" alt="Film"></div>
+      <div class="film-card"><img src="https://www.lavanguardia.com/peliculas-series/images/serie/poster/2022/11/w1280/9mYjnTjWexrZzQC1WBlz8BOOiAi.jpg" alt="Film"></div>
+      <div class="film-card"><img src="https://m.media-amazon.com/images/M/MV5BNmQ4ZmM2NmItZGMwNi00ODhiLWFjZTMtMDdmYzg3YjdiNWM0XkEyXkFqcGc@._V1_.jpg" alt="Film"></div>
+      <div class="film-card"><img src="https://www.lavanguardia.com/peliculas-series/images/serie/poster/2022/11/w1280/9mYjnTjWexrZzQC1WBlz8BOOiAi.jpg" alt="Film"></div>
+    </div>
+  </section>
+  <script>
+          const menuButton = document.getElementById('menuButton');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    menuButton.addEventListener('click', () => {
+      sidebar.classList.add('open');
+      overlay.classList.add('show');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('show');
+    });
+
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(item => {
+      item.addEventListener('click', () => {
+        const submenu = item.nextElementSibling;
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
