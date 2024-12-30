@@ -137,7 +137,7 @@ body {
 
   .sidebar ul {
     list-style-type: none;
-    padding: 0;
+    padding: 0 0 100px;
     margin: 0;
   }
 
@@ -173,10 +173,6 @@ body {
   .submenu li {
     margin: 10px 0;
   }
-.sidebar {
-  overflow-y: auto;
-  max-height: 100vh;
-}
 
   /* Overlay */
   .overlay {
