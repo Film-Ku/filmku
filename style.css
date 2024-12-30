@@ -173,6 +173,10 @@ body {
   .submenu li {
     margin: 10px 0;
   }
+.sidebar {
+  overflow-y: auto;
+  max-height: 100vh;
+}
 
   /* Overlay */
   .overlay {
