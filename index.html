@@ -1,108 +1,91 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FilmKu</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/1842f0f801.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-
-<!-- Header -->
-<div class="header">
-  <div class="menu-button" id="menuButton">
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHgKk0Z7SsjOc087QyS4Ckj6SyQT6bx_J_HMfOBRyGLNR-m_cISQobg-jEBVSKW84aJ80p3HM_5hh8ff9OKb8DZV4ajb_au8PMYZ3A_IHmh7O_IfMzo9ZECYgepZuLdKHDuMqtuVwclQhEyO-Zu-luNkwm1HCLVwJ-jkLjmDrzzZLi4CdohsLxAU6zAv1Y/s116/FilmKu_20241226_070940_0000.png">
-  </div>
-    <div class="logo-container">
-      <div class="logo">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPhVJl6J_JdQ-7zc1-qMFQAnkZNDkpbQvJIgOmOKTstghn8hSD9LRf0va9dYz5cNZdzjK0Lgw4YyBAkeOA26pwJ3ZsC5rg_ySfpOYOKQKJeR1aW_jQBUJhYC3ATrAhbCPsuS-B7URzbS3ymn0KblXdgjmVSdX2IKkBjCmP2drEKcKI1MxJIpqJhyCw2FPU/s1920/FILM (Wallpaper Telepon)_20241224_134622_0000.png" alt="Logo FilmKu">
-          <h1>Film<span>Ku</span></h1>
-      </div>
+    <header class="header">
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo-container">
+            <div class="logo">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPhVJl6J_JdQ-7zc1-qMFQAnkZNDkpbQvJIgOmOKTstghn8hSD9LRf0va9dYz5cNZdzjK0Lgw4YyBAkeOA26pwJ3ZsC5rg_ySfpOYOKQKJeR1aW_jQBUJhYC3ATrAhbCPsuS-B7URzbS3ymn0KblXdgjmVSdX2IKkBjCmP2drEKcKI1MxJIpqJhyCw2FPU/s1920/FILM (Wallpaper Telepon)_20241224_134622_0000.png" alt="Logo FilmKu">
+                <h1>Film<span>Ku</span></h1>
+            </div>
+        </div>
+        <div class="search-button" id="searchButton">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="search-container" id="searchContainer">
+            <input type="text" id="searchInput" placeholder="ketik nama film..." autocomplete="off">
+            <div class="result-box"></div>
+        </div>
+    </header>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="logosidebar">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPhVJl6J_JdQ-7zc1-qMFQAnkZNDkpbQvJIgOmOKTstghn8hSD9LRf0va9dYz5cNZdzjK0Lgw4YyBAkeOA26pwJ3ZsC5rg_ySfpOYOKQKJeR1aW_jQBUJhYC3ATrAhbCPsuS-B7URzbS3ymn0KblXdgjmVSdX2IKkBjCmP2drEKcKI1MxJIpqJhyCw2FPU/s1920/FILM (Wallpaper Telepon)_20241224_134622_0000.png">
+        </div>
+        <div class="menu">
+            <p class="menu-item"><i class="fas fa-home"></i>Home</p>
+            <p class="menu-item collapsible"><i class="fas fa-film"></i>Film</p>
+            <div class="submenu">
+                <p>Film Barat</p>
+                <p>Film Indonesia</p>
+            </div>
+            <p class="menu-item collapsible"><i class="fas fa-tv"></i>Series</p>
+            <div class="submenu">
+                <p>Series Barat</p>
+                <p>Series Indonesia</p>
+                <p>Series Korea</p>
+            </div>
+        </div>
+        <div class="socialmedia">
+            <i class="fab fa-telegram"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+        </div>
     </div>
-    <div class="search-button" id="searchButton">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1N1-lq1zlxsqUPTmM9sa52MXcKvk-FwSGnolKu90RCCsz6e2XrUQqxknJXJlYpv5rM9skXOFmVmJ8uzCM2s3fQtohD1fVn5uhJEZ9qOZ86M9Gwycfs3O3HaQV1fXWaVkGryPtJb4UweXjVNts-_Pi2LhL7jdbWvZzrm2WyFK3dtk5YjZ4V2n3FWbx3K1Y/s116/FilmKu_20241226_070911_0000.png" alt="Search">
-    </div>
-    <div class="searchform" id="searchForm">
-        <input type="text" id="searchInput" placeholder="Cari film..." autocomplete="off">
-        <button id="searchSubmit">Cari</button>
-        <div class="result-box"></div>
-    </div>
-    
-</div>
 
-<!-- Overlay -->
-<div class="overlay" id="overlay"></div>
+    <section>
+         <h2>Unggulan</h2>
+         <div class="carousel" align=center>
+             <div class="carousel-track">
+                 <div class="carousel-item"><img src="https://m.media-amazon.com/images/M/MV5BNmQ4ZmM2NmItZGMwNi00ODhiLWFjZTMtMDdmYzg3YjdiNWM0XkEyXkFqcGc@._V1_.jpg" alt="Film 1"></div>
+                 <div class="carousel-item"><img src="https://www.lavanguardia.com/peliculas-series/images/serie/poster/2022/11/w1280/9mYjnTjWexrZzQC1WBlz8BOOiAi.jpg" alt="Film 2"></div>
+                 <div class="carousel-item"><img src="https://m.media-amazon.com/images/M/MV5BNmQ4ZmM2NmItZGMwNi00ODhiLWFjZTMtMDdmYzg3YjdiNWM0XkEyXkFqcGc@._V1_.jpg" alt="Film 3"></div>
+                 <div class="carousel-item"><img src="https://www.lavanguardia.com/peliculas-series/images/serie/poster/2022/11/w1280/9mYjnTjWexrZzQC1WBlz8BOOiAi.jpg" alt="Film 4"></div>
+             </div>
+             <button class="carousel-btn left">&lt;</button>
+             <button class="carousel-btn right">&gt;</button>
+         </div>
+     </section>
+             <section>
+         <h2>Terbaru</h2>
+         <div class="film-grid">
+             <div class="film-card"><img src="https://m.media-amazon.com/images/M/MV5BNmQ4ZmM2NmItZGMwNi00ODhiLWFjZTMtMDdmYzg3YjdiNWM0XkEyXkFqcGc@._V1_.jpg" alt="Bu Tejo Sowan Jakarta"></div>
+             <div class="film-card"><img src="https://www.lavanguardia.com/peliculas-series/images/serie/poster/2022/11/w1280/9mYjnTjWexrZzQC1WBlz8BOOiAi.jpg" alt="Cek Toko Sebelah (2016)"></div>
+             <div class="film-card"><img src="https://www.lavanguardia.com/peliculas-series/images/serie/poster/2022/11/w1280/9mYjnTjWexrZzQC1WBlz8BOOiAi.jpg" alt="Cek Toko Sebelah (2016)"></div>
+             <div class="film-card"><img src="https://m.media-amazon.com/images/M/MV5BNmQ4ZmM2NmItZGMwNi00ODhiLWFjZTMtMDdmYzg3YjdiNWM0XkEyXkFqcGc@._V1_.jpg" alt="Bu Tejo Sowan Jakarta"></div>
+             <div class="film-card"><img src="https://m.media-amazon.com/images/M/MV5BNmQ4ZmM2NmItZGMwNi00ODhiLWFjZTMtMDdmYzg3YjdiNWM0XkEyXkFqcGc@._V1_.jpg" alt="Bu Tejo Sowan Jakarta"></div>
+             <div class="film-card"><img src="https://www.lavanguardia.com/peliculas-series/images/serie/poster/2022/11/w1280/9mYjnTjWexrZzQC1WBlz8BOOiAi.jpg" alt="Cek Toko Sebelah (2016)"></div>
+             <div class="film-card"><img src="https://www.lavanguardia.com/peliculas-series/images/serie/poster/2022/11/w1280/9mYjnTjWexrZzQC1WBlz8BOOiAi.jpg" alt="Cek Toko Sebelah (2016)"></div>
+             <div class="film-card"><img src="https://m.media-amazon.com/images/M/MV5BNmQ4ZmM2NmItZGMwNi00ODhiLWFjZTMtMDdmYzg3YjdiNWM0XkEyXkFqcGc@._V1_.jpg" alt="Bu Tejo Sowan Jakarta"></div>
+         </div>
+     </section>
 
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-    <h1><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgiqNvU1KqoaJPkoQD8T4UT63MyRPjCGz03Lx52GAoqB2y7YIbEy-KL5pVIiHxRVFeobamhmlny0Gb8j1zXMTi8EOjAfjgAgWvKTzNj9O1UUZPxCGFPgsKasMYgVa6DcVA0roKAmYAjsGB4YP7duVCUSADIeEI8MruN3-_BbQhpK6Zu-LcKw1Mr3Ngj_oiy/s318/FilmKu_20241226_143851_0000.png" alt="Logo">
-    </h1>
-    <ul>
-      <li>
-        <a href="#"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOqXju3kzPgmiNI-oAmad-1wB4Fs4bXtwbhxZyHoJ936ALg7feAAG_sCsjO6pEoswAHVGjhFfosv5bgmdPHJOcyX3lmWhN-2iI7Z77oQXInSzFMygqTfeKrp-mWl6WkwRvF7aoLAwzU3mWzZSJLVNfeDRRtgBr5nEPl05qRHyVvxblt5e-W2yEH-e2G3wu/s116/FilmKu_20241226_141508_0000.png" alt="Home Icon"> Home</a>
-      </li>
-      <li>
-        <a class="collapsible"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfxxWWAt5Dr2GgoLzzpa74hwRKNKDjUXucI14mRQWqB5wJsI7V_pklDQpmQnVPv7Yl8RvOIU2sX2cismBdiUClrB_AK5Wlx3LAxd6Cd0Gim6RT-wDTkajuxD9uTZRyKhfJRWBtSkVH9EZX3Gq26ZKlCyms0oyanxjoqXoA3_vVES1ZFsfWfAfwB_RpF078/s116/FilmKu_20241226_141520_0000.png" alt="Series Icon"> Series</a>
-        <ul class="submenu">
-          <li><p><a href="#">Series Barat</a></p></li>
-          <li><p><a href="#">Series Indonesia</a></p></li>
-          <li><p><a href="#">Series Korea</a></p></li>
-        </ul>
-      </li>
-      <li>
-        <a class="collapsible"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-FV2kgjScsZAKSdJFySqs494bVQyhWGtMuVYaqHrDBWkWVZ2ygeMKq6JnehHN5Si3cdcu3i5gawu4k6CHuA4ATATcwER8W7iPBhZzAYyY33f3BEQFV-fD6ZZYezQI0rv36ofpuSxpRsD_J5OZvCwQT_26_l3zDD-LUw75alJhqjM8LsjktqYxick-zcBc/s116/FilmKu_20241226_141531_0000.png" alt="Film Icon"> Film</a>
-        <ul class="submenu">
-          <li><p><a href="#">Film Barat</a></p></li>
-          <li><p><a href="#">Film Indonesia</a></p></li>
-        </ul>
-      </li>
-    </ul>
-  <div class="social-media-icons">
-      <a href="#"><i class="fa-brands fa-telegram"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-  </div>
-</div>
-  
-
-<!-- Main Content -->
-  <section>
-    <br></br>
-    <p><h3>Film Unggulan</h3></p>
-    <div class="carousel" align=center>
-    <div class="carousel-track">
-          <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/en/d/d0/Carry_On_film_poster.jpg" alt="Film 1"></div>
-          <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/en/a/a3/Venom_The_Last_Dance_Poster.jpg" alt="Film 5"></div>
-          <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/id/2/25/Red_One_poster.jpg" alt="Film 2"></div>
-          <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/en/e/ec/Kraven_the_Hunter_%28film%29_poster.jpg" alt="Film 3"></div>
-          <div class="carousel-item"><img src="https://postercinema.eu/cdn/shop/files/the-substance_vcvbwfcq.jpg?v=1728146651&width=600" alt="Film 4"></div>
-          <div class="carousel-item"><img src="https://upload.wikimedia.org/wikipedia/id/b/be/Juror_No._2_%282024%29.jpg" alt="Film 4"></div>
-      </div>           
-          <button class="carousel-btn left">&lt;</button>
-          <button class="carousel-btn right">&gt;</button>
-    </div>
-  </section>
-  <section>
-    <h3>Terbaru</h3>
-      <div class="film-grid">
-          <div class="film-card"><img src="https://upload.wikimedia.org/wikipedia/en/0/04/Gladiator_II_%282024%29_poster.jpg" alt="Gladiator II (2024)"></div>
-          <div class="film-card"><img src="https://upload.wikimedia.org/wikipedia/en/6/67/Y2k_2024_movie.jpeg" alt="Y2k 2024"></div>
-          <div class="film-card"><img src="https://upload.wikimedia.org/wikipedia/en/5/58/The_Six_Triple_Eight_poster.jpg" alt="The Six Triple Eight 2024"></div>
-          <div class="film-card"><img src="https://upload.wikimedia.org/wikipedia/en/d/d6/The_Order_2024_film_poster.jpg" alt="The Order 2024"></div>
-          <div class="film-card"><img src="https://upload.wikimedia.org/wikipedia/en/5/5a/Small_Things_Like_These_film_poster.jpg" alt="Small Things like These 2024"></div>
-          <div class="film-card"><img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Maria_%282024_film%29.jpeg" alt="Maria 2024"></div>
-          <div class="film-card"><img src="https://upload.wikimedia.org/wikipedia/en/3/38/Dirty_Angels_film_poster.jpg" alt="Dirty Angels (2024)"></div>
-          <div class="film-card"><img src="https://upload.wikimedia.org/wikipedia/en/c/cb/Heretic_film_poster.jpg" alt="Heretic (2024)"></div>
-      </div>
-
-  </section>
-  <footer>Copyright © 2024 FilmKu. All Rights Reserved.</footer>
-<script src="scriptHome.js"> 
-</script>
+    <script src="scripts.js"></script>
 </body>
+<footer>
+    <div class="footer">
+        <p>© 2024 by FilmKu. Alright reserved</p>
+    </div>
 </html>
-
-
-
-
